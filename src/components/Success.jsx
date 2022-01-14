@@ -1,22 +1,24 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import { useSelector } from 'react-redux';
+
 
 const Success = () => {
-     // const selectName = useSelector(state => state.name);
-    // const selectEmail = useSelector(state => state.email);
-    // const selectPass = useSelector(state => state.pass);
 
    const selector = useSelector(state =>{
     return{
         selectName:state.name,
         selectEmail:state.email,
+        selectMob:state.mobile,
         selectPass:state.pass,
     }
 })
     return (
         <div>
-            successs logged in successfully !! {selector.selectName}
+            <h1>successs logged in successfully !!</h1> 
+            <br /><br />
+            <h3>Name: {selector.selectName}</h3>
+            <h4>Email: {selector.selectEmail}</h4>
+            <h4>Mobile No.: {selector.selectMob}</h4>
         </div>
     );
 };

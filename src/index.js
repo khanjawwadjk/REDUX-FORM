@@ -12,15 +12,16 @@ import {Provider} from "react-redux";
 const initialState = {
   name:"", 
   email:"", 
-  mobile:"",
   pass:"",
+  mobile:"",
 }
 
 const reducer = (state=initialState, action) =>{
     console.warn("initial state", state);
+    console.warn("action", action);
     switch(action.type){
       case "VNAME": return{
-        ...state, name:state.name + action.payload,
+        ...state, name:state + action.payload,
       }
       case "VMAIL": return{
         ...state, email:state.email + action.payload,

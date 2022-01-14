@@ -8,15 +8,16 @@ import {useNavigate} from "react-router-dom";
 
 
 const MyForm = () =>{
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+
     const nameRef = useRef(null);
     const mailRef = useRef(null);
     const passRef = useRef(null);
     const mobileRef = useRef(null);
 
     
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
     //
     const dispatchName = () =>{
         let refDataName = nameRef.current.value;
@@ -29,7 +30,7 @@ const MyForm = () =>{
             swal("Name should be in between 3 & 12 chars only","","error");
             return false;
         }else if(regex.test(refDataName) === false){
-            swal("Invalid Name","Should match RegExp !!","error");
+            swal("Invalid Name",`Alphabet Only`,"error");
             return false;
         }else{
             dispatch({
@@ -104,7 +105,7 @@ const MyForm = () =>{
     const dispatchData = (e) =>{
         e.preventDefault();
         
-        if(dispatchName()===true && dispatchEmail()===true && dispatchMobile()===true && dispatchPass()===true){
+        if(dispatchName() && dispatchEmail() && dispatchMobile() && dispatchPass()){
             swal("Dispatched","","success");
             navigate('/success');
         }else{
