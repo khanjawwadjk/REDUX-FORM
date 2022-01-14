@@ -18,7 +18,7 @@ const Success = () => {
             <h1>Congrats, Logged in successfully !!</h1> 
             <br /><br />
 
-            <Table striped bordered hover>
+            <Table striped bordered hover style={{width:"50rem", margin:"20px auto"}}>
                 <thead>
                     <tr>
                     <th>Name</th>
