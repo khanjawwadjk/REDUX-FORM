@@ -1,6 +1,6 @@
 import React, {useRef} from "react"; 
 import {Form, Button, Row, Col} from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import swal from 'sweetalert';
 import {useNavigate} from "react-router-dom";
 
@@ -13,17 +13,7 @@ const MyForm = () =>{
     const passRef = useRef(null);
     const mobileRef = useRef(null);
 
-    // const selectName = useSelector(state => state.name);
-    // const selectEmail = useSelector(state => state.email);
-    // const selectPass = useSelector(state => state.pass);
-
-//    const selector = useSelector(state =>{
-//        return{
-//            selectName:state.name,
-//            selectEmail:state.email,
-//            selectPass:state.pass,
-//        }
-//    })
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
