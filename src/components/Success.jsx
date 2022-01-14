@@ -15,7 +15,9 @@ const Success = () => {
 })
     return (
         <div>
-            <h1>Congrats, Logged in successfully !!</h1> 
+            <div style={{marginTop:"8rem",marginLeft:"23rem", backgroundColor:"aliceblue", padding:"20px", width:"50rem"}}>
+            <h1><mark>Congrats</mark>, Logged in successfully !!</h1> 
+            </div>
             <br /><br />
 
             <Table striped bordered hover style={{width:"50rem", margin:"20px auto"}}>
@@ -27,10 +29,10 @@ const Success = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <td>{selector.selectName}</td>
-                    <td>{selector.selectEmail}</td>
-                    <td>{selector.selectMob}</td>
+                    <tr >
+                        <td style={{padding:"20px", fontWeight:"bold", fontSize:"2rem"}}>{selector.selectName}</td>
+                        <td style={{padding:"20px", fontWeight:"bold", fontSize:"2rem"}}>{selector.selectEmail}</td>
+                        <td style={{padding:"20px", fontWeight:"bold", fontSize:"2rem"}}>{selector.selectMob}</td>
                     </tr>
                     </tbody>
             </Table>
