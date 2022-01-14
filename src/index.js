@@ -21,16 +21,16 @@ const reducer = (state=initialState, action) =>{
     console.warn("action", action);
     switch(action.type){
       case "VNAME": return{
-        ...state, name:state + action.payload,
+        ...state, name: action.payload,
       }
       case "VMAIL": return{
-        ...state, email:state.email + action.payload,
+        ...state, email: action.payload,
       }
       case "VPASS": return{
-        ...state, pass:state.pass + action.payload,
+        ...state, pass: action.payload,
       }
       case "VMOBILE": return{
-        ...state, mobile:state.mobile + action.payload,
+        ...state, mobile: action.payload,
       }
       default:return state;
     }

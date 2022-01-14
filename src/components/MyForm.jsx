@@ -21,7 +21,7 @@ const MyForm = () =>{
     //
     const dispatchName = () =>{
         let refDataName = nameRef.current.value;
-        let regex = new RegExp(/^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/);
+        let regex = new RegExp(/^(([A-Za-z]?)*([A-Za-z]+)?\s)*([A-Za-z]+)?$/);
         
         if(refDataName === ""){
             swal("Name can't be empty","","error");
@@ -68,9 +68,12 @@ const MyForm = () =>{
             swal("Mobile can't be empty","","error");
             return false;
         }else if(regex.test(refDataMob) === false){
-            swal("Invalid Mobile No.","Should match RegExp","error");
+            swal("Invalid Mobile No.","Number Starts in between 6-9","error");
             return false;
-        }else{
+        }else if(refDataMob.length<10){
+            swal("Should be 10 digits","","error");
+        }
+        else{
             dispatch({
                 type:"VMOBILE",
                 payload:refDataMob,
@@ -91,7 +94,7 @@ const MyForm = () =>{
             swal("Name should be in between 4 & 8 chars only","","error");
             return false;
         }else if(regex.test(refDataPass) === false){
-            swal("Invalid Password","Should match RegExp","error");
+            swal("Invalid Password","Should be--one capital, one small, one symbol","error");
             return false;
         }else{
             dispatch({

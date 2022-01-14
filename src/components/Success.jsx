@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from "react-redux";
+import {Table} from "react-bootstrap";
 
 
 const Success = () => {
@@ -14,11 +15,25 @@ const Success = () => {
 })
     return (
         <div>
-            <h1>successs logged in successfully !!</h1> 
+            <h1>Congrats, Logged in successfully !!</h1> 
             <br /><br />
-            <h3>Name: {selector.selectName}</h3>
-            <h4>Email: {selector.selectEmail}</h4>
-            <h4>Mobile No.: {selector.selectMob}</h4>
+
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>{selector.selectName}</td>
+                    <td>{selector.selectEmail}</td>
+                    <td>{selector.selectMob}</td>
+                    </tr>
+                    </tbody>
+            </Table>
         </div>
     );
 };
